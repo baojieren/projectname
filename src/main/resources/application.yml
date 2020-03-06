@@ -1,0 +1,15 @@
+spring:
+  profiles:
+    # 指定激活哪个配置文件（dev，test，prod）
+    active: dev
+
+server:
+  port: 8081
+  servlet:
+    context-path: /projectname
+# mybatis配置
+mybatis:
+  #  mapper文件路径
+  mapper-locations: classpath*:mapper/*.xml
+  #  别名
+  type-aliases-package: com.companyname.projectname.entity.po

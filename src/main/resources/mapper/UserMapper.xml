@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.companyname.projectname.dao.UserMapper">
+  <resultMap id="BaseResultMap" type="com.companyname.projectname.entity.po.UserPo">
+    <id column="id" property="id" />
+    <result column="name" property="name" />
+    <result column="phone" property="phone" />
+    <result column="create_time" property="createTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, `name`, phone, create_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from t_user
+    where id = #{id}
+  </select>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.companyname.projectname.entity.po.UserPo" useGeneratedKeys="true">
+    insert into t_user (`name`, phone, create_time)
+    values (#{name}, #{phone}, #{createTime})
+  </insert>
+</mapper>

@@ -1,0 +1,6 @@
+spring:
+#  测试环境数据库配置（使用默认的HikariCP数据库连接池，性能比druid高）
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/db?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&allowMultiQueries=true
+    username: root
+    password: 123456
